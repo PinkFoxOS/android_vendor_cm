@@ -221,7 +221,7 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
-PRODUCT_VERSION_MAJOR = 13
+PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE := 5
 
@@ -274,9 +274,18 @@ else
 endif
 
 ifeq ($(CM_BUILDTYPE), UNOFFICIAL)
+	# Unofficial build ID
+	TARGET_UNOFFICIAL_BUILD_ID := Pinkgoth
     ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
         CM_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
     endif
+endif
+
+ifeq ($(PINKFOX_BUILD_TYPE), OFFICIAL)
+    # OTA
+    PRODUCT_PACKAGES += \
+        CMUpdater
+		su
 endif
 
 ifeq ($(CM_BUILDTYPE), RELEASE)
