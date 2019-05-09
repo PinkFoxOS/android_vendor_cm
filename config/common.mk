@@ -2,6 +2,9 @@ PRODUCT_BRAND ?= cyanogenmod
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# Bootanimation
+$(call inherit-product, vendor/cm/config/bootanimation.mk)
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google
@@ -89,10 +92,6 @@ include vendor/cm/config/themes_common.mk
 
 # CMSDK
 include vendor/cm/config/cmsdk_common.mk
-
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
 
 # Required CM packages
 PRODUCT_PACKAGES += \
