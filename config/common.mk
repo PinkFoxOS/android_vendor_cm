@@ -285,7 +285,8 @@ ifeq ($(PINKFOX_BUILD_TYPE), OFFICIAL)
     # OTA
     PRODUCT_PACKAGES += \
         CMUpdater
-		su
+        su
+    CM_BUILDTYPE := OFFICIAL
 endif
 
 ifeq ($(CM_BUILDTYPE), RELEASE)
