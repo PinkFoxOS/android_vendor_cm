@@ -284,8 +284,8 @@ endif
 ifeq ($(PINKFOX_BUILD_TYPE), OFFICIAL)
     # OTA
     PRODUCT_PACKAGES += \
-        CMUpdater
-        su
+	CMUpdater \
+	su
     CM_BUILDTYPE := OFFICIAL
 endif
 
